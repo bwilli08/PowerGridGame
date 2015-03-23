@@ -23,4 +23,9 @@ public class CityConnection {
 	public void setCity(City city) {
 		this.city = city;
 	}
+	
+	@Override
+	public String toString() {
+		return "(" + city.getName() + ", $" + cost + ")";
+	}
 }

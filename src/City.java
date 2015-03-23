@@ -46,4 +46,13 @@ public class City {
 		City temp = (City) obj;
 		return temp.getName().equals(name);
 	}
+	
+	@Override
+	public String toString() {
+		String temp = "{" + name + ": ";
+		for(int i=0; i<connections.size(); i++) {
+			temp = temp + connections.get(i).toString();
+		}
+		return temp + "}";
+	}
 }
