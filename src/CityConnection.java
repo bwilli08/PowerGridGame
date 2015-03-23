@@ -25,6 +25,16 @@ public class CityConnection {
 	}
 	
 	@Override
+	public boolean equals(Object obj) {
+		if(!(obj instanceof CityConnection))
+			return false;
+		if(obj == this)
+			return true;
+		CityConnection temp = (CityConnection) obj;
+		return temp.getCity().equals(this.getCity());
+	}
+	
+	@Override
 	public String toString() {
 		return "(" + city.getName() + ", $" + cost + ")";
 	}

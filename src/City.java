@@ -15,10 +15,12 @@ public class City {
 	}
 
 	public void addConnection(City city, int cost) {
-		if(!this.isConnected(city))
+		if(!this.isConnected(city)) {
 			connections.add(new CityConnection(city, cost));
-		if(!city.isConnected(this))
-			city.addSecondConnection(this, cost);
+			if(!city.isConnected(this)) {
+				city.addSecondConnection(this, cost);
+			}
+		}
 	}
 	
 	private void addSecondConnection(City city, int cost) {
@@ -30,7 +32,7 @@ public class City {
 	}
 	
 	public boolean isConnected(City city) {
-		return connections.contains(city);
+		return connections.contains(new CityConnection(city, 0));
 	}
 	
 	public String getName() {
